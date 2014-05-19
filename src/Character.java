@@ -7,7 +7,7 @@ public abstract class Character extends Thread{
     protected final Object monitor = new Object();
     protected String charName;
     protected String action;
-    protected static final  int multiplier = 100;
+    protected static final  int multiplier = 1;
 
     public int getNumber(){
         return this.number;
@@ -43,15 +43,19 @@ public abstract class Character extends Thread{
                     e.printStackTrace();
                 }
             } else {
-                Random rand = new Random();
+                //Random rand = new Random();
                 System.out.println(charName+" №"+this.number+action);
                 try {
-                    sleep(multiplier*(rand.nextInt(9)+1));
+                    sleep(multiplier);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 enAttente = true;
-                pere.charRequest(this);
+                try {
+                    pere.charRequest(this);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
