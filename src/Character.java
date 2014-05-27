@@ -7,7 +7,7 @@ public abstract class Character extends Thread{
     protected final Object monitor = new Object();
     protected String charName;
     protected String action;
-    protected static final  int multiplier = 1;
+    public static final  int multiplier = 1000;
 
     public int getNumber(){
         return this.number;
@@ -43,10 +43,10 @@ public abstract class Character extends Thread{
                     e.printStackTrace();
                 }
             } else {
-                //Random rand = new Random();
-                System.out.println(charName+" №"+this.number+action);
+                Random rand = new Random();
+                System.out.println(charName+" n°"+this.number+action);
                 try {
-                    sleep(multiplier);
+                    sleep(multiplier*(rand.nextInt(9)+1));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

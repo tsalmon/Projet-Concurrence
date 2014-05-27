@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Main {
     static final int nbElfes = 3;
-    static final int nbRenes = 3;
+    static final int nbRenes = 9;
 
     public static void main(String [ ] args) throws IOException {
         ArrayList<Elfe> elfes = new ArrayList<Elfe>();
